@@ -6,15 +6,14 @@ class TopicService:
         self.__classType = classType
         self.__data = None
 
-    def setData(self, data):
+    def set_data(self, data):
         self.__data = data
-        print("sett:", data)
 
-    def getData(self):
+    def get_data(self):
         return self.__data
 
-    def getType(self):
+    def get_type(self):
         return self.__classType
 
-    def getName(self):
+    def get_name(self):
         return self.__name

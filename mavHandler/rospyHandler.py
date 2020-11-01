@@ -1,5 +1,5 @@
 import rospy
-from rosHandler.topicService import TopicService
+from mavHandler.topicService import TopicService
 
 
 class RosHandler:
@@ -10,24 +10,26 @@ class RosHandler:
     def connect(self, node: str, rate: int):
         rospy.init_node(node, anonymous=True)
         self.rate = rospy.Rate(rate)
-        rospy.spin()
         self.connected = True
+        rospy.loginfo("Rospy is up ...")
+        rospy.spin()
 
     def disconnect(self):
         if self.connected:
+            rospy.loginfo("shutting down rospy ...")
             rospy.signal_shutdown("disconnect")
             self.connected = False
 
     @staticmethod
     def topic_reader(topic: TopicService):
-        rospy.Subscriber(topic.getName(), topic.getType(), topic.setData)
+        rospy.Subscriber(topic.get_name(), topic.get_type(), topic.set_data)
 
     @staticmethod
     def service_caller(service: TopicService, timeout=30):
         try:
-            srv = service.getName()
-            typ = service.getType()
-            data = service.getData()
+            srv = service.get_name()
+            typ = service.get_type()
+            data = service.get_data()
 
             rospy.loginfo("waiting for ROS service:" + srv)
             rospy.wait_for_service(srv, timeout=timeout)
