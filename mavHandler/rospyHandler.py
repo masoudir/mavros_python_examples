@@ -21,7 +21,13 @@ class RosHandler:
             self.connected = False
 
     @staticmethod
-    def topic_reader(topic: TopicService):
+    def topic_publisher(topic: TopicService):
+        pub = rospy.Publisher(topic.get_name(), topic.get_type(), queue_size=10)
+        pub.publish(topic.get_data())
+        print("edfgedge")
+
+    @staticmethod
+    def topic_subscriber(topic: TopicService):
         rospy.Subscriber(topic.get_name(), topic.get_type(), topic.set_data)
 
     @staticmethod

@@ -1,6 +1,6 @@
 import threading
 import time
-from mavHandler.roverHandler import RoverHandler
+from mavHandler.roverHandler import *
 
 
 class MyRoverHandler(RoverHandler):
@@ -14,7 +14,14 @@ class MyRoverHandler(RoverHandler):
     def user(self):
         while True:
             time.sleep(1)
-            print("arm:", self.arm, "mode:", self.mode)
+            print("arm:", self.armed, "mode:", self.mode)
+            print("set param:", self.set_param("CRUISE_SPEED", 2, 0))
+            if self.connected:
+                print("get param:", self.get_param("CRUISE_SPEED"))
+                print("set param:", self.set_param("CRUISE_SPEED", 10, 0))
+                self.change_mode(MODE_GUIDED)
+                self.arm(True)
+                self.move(50.15189, 10.484885, 0)
 
 
 
