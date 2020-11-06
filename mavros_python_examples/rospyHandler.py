@@ -1,5 +1,5 @@
 import rospy
-from mavHandler.topicService import TopicService
+from mavros_python_examples.topicService import TopicService
 
 
 class RosHandler:

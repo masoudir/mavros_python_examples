@@ -5,10 +5,10 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="mavros_python_examples", # Replace with your own username
-    version="0.0.1",
+    version="0.0.2",
     author="Masoud Iranmehr",
     author_email="masoud.iranmehr@gmail.com",
-    description="A small example package",
+    description="MAVROS examples",
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://github.com/masoudir/mavros_python_examples",

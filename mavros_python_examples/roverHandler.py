@@ -5,8 +5,8 @@ import mavros_msgs.srv
 import rospy
 
 
-from mavHandler.rospyHandler import RosHandler
-from mavHandler.topicService import TopicService
+from mavros_python_examples.rospyHandler import RosHandler
+from mavros_python_examples.topicService import TopicService
 
 MODE_MANUAL = "MANUAL"
 MODE_ACRO = "ACRO"

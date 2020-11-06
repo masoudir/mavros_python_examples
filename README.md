@@ -170,7 +170,7 @@ If you download this project with git, you can run the example via this command:
 
 * `python3 test/rover.py`
 
-This will create a node with the name of "node1" and then it will connect to the vehicle you brought up via the former 
+This will create a node with the name of "node1" and then it will connect to the ArduRover vehicle you brought up via the former 
 step, then it will set the value of "CRUISE_SPEED" parameter to 2 and then it will change the vehicle
 mode to "GUIDED". Then it will ARM the vehicle and then force the vehicle to move to the destination of 
 {"lat":50.15189, "lon":10.484885}. 
@@ -179,7 +179,7 @@ mode to "GUIDED". Then it will ARM the vehicle and then force the vehicle to mov
 
 If you have installed this package via pip3, you can just write a sample code like this:
 
-    from mavros_python_examples.mavHandler.roverHandler import *
+    from mavros_python_examples.roverHandler import *
     import threading
     import time
 
@@ -210,7 +210,10 @@ If you have installed this package via pip3, you can just write a sample code li
         v.enable_topics_for_read()
         v.connect("node1", rate=10)
 
-
+This will create a node with the name of "node1" and then it will connect to the ArduRover vehicle you brought up via the former 
+step, then it will set the value of "CRUISE_SPEED" parameter to 2 and then it will change the vehicle
+mode to "GUIDED". Then it will ARM the vehicle and then force the vehicle to move to the destination of 
+{"lat":50.15189, "lon":10.484885}. 
 
 
 # License
