@@ -166,7 +166,9 @@ The -U parameter allow to update simple_udp_proxy version if it is already insta
 
 ## Run the test file
 
-If you download this project with git, you can run the example via this command:
+At first you need to follow the instructions mentioned at the beginning of this document to introduce ROS functions to 
+this code (Becareful to source the path of ROS and MAVROS on the current terminal in order to use the code). Then if you
+download this project with git, you can run the example via this command:
 
 * `python3 test/rover.py`
 
@@ -209,6 +211,10 @@ If you have installed this package via pip3, you can just write a sample code li
         v = MyRoverHandler()
         v.enable_topics_for_read()
         v.connect("node1", rate=10)
+
+In order to run your code please follow the instructions mentioned at the beginning of this document to introduce ROS 
+functions to this code (Becareful to source the path of ROS and MAVROS on the current terminal in order to use the code).
+Then if you download this project with git, you can run your code.
 
 This will create a node with the name of "node1" and then it will connect to the ArduRover vehicle you brought up via the former 
 step, then it will set the value of "CRUISE_SPEED" parameter to 2 and then it will change the vehicle
