@@ -18,7 +18,6 @@ class MyRoverHandler(RoverHandler):
             print("set param:", self.set_param("CRUISE_SPEED", 2, 0))
             if self.connected:
                 print("get param:", self.get_param("CRUISE_SPEED"))
-                print("set param:", self.set_param("CRUISE_SPEED", 10, 0))
                 self.change_mode(MODE_GUIDED)
                 self.arm(True)
                 self.move(50.15189, 10.484885, 0)
